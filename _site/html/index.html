@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Nicholas Long Pham</Title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Raleway:ital,wght@1,900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/52e13d882d.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+       
+
+        
+    </head>
+    <body>
+        <!--Mainpage consisting of name, picture, navigation links, and socials.-->
+        <div class="mainPage" id="mainPage">
+            <div class="titleName">
+                <h1>NICHOLAS LONG PHAM</h1>
+            </div>
+            
+
+            <!-- NavBar to see about, projects, and RESUME-->
+            <div class="mainNav">
+                <nav>
+                    <ul style="list-style-type: none;">
+                        <li class="navSelection">
+                            <button class="changePageButton" data-target="about">ABOUT</button>
+                        </li>
+                        <li class="navSelection">
+                            <button class="changePageButton" data-target="projects">PROJECTS</button>
+                        </li>
+                        <li class="navSelection">
+                            <button class="changePageButton" data-target="resume">RESUME</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>    
+        
+
+
+            <div class="card-container">
+                    
+                
+                <div class="card">
+                    <div class="content" id="resume">
+                        <h2>RESUME</h2>
+
+                    </div>
+                   
+                </div>
+
+                <div class="card">
+                    <div class="content" id="projects">
+                        <h2>PROJECTS</h2>
+                        
+                    </div>
+                   
+                </div>
+
+                <div class="card">
+                    <div class="content" id="about">
+                        <h2>ABOUT</h2>
+                        
+                    </div>
+                   
+                </div>
+                
+                
+                
+            </div>
+        </div>
+
+     <!--Links to Github and Linkedin-->
+        <div class="socialNav">
+            <ul id="socialNav" style="list-style-type: none;">
+                <li class="social">
+                    <a class="linkedin" href="https://www.linkedin.com/in/nicholas-pham-a56b34243/">
+                        <span class="fa-brands fa-linkedin" style="color: #000000;"></span>
+
+                    </a>
+                </li>
+                <li>
+                    <a class="github" href="https://github.com/Wizzylord3">
+                        <i class="fa-brands fa-github" style="color: #000000;"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+        <!--Animation library -->
+        <script src="../../node_modules/animejs/lib/anime.min.js"></script>
+    </body>
+</html>

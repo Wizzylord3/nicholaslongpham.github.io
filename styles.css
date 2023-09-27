@@ -1,0 +1,167 @@
+html{
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: white; /* Set to your desired background color */
+    
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-family: 'Cabin Sketch';
+    font-weight: 900;
+    text-align: center;
+    color: #000000;
+}
+h2{
+    font-family: "Clarkson",Helvetica,sans-serif;
+}
+
+.prof_pic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mainPage{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fca311;
+}
+
+.mainNav{
+    display: inline-block;
+}
+
+.card-container{
+    justify-content: center !important;
+    display: inline-block;
+    position: absolute;
+}
+.card{
+    justify-content: center !important;
+    list-style: none;
+    position: absolute;
+    left: 10em;
+}
+#about{
+    width: 40vw;
+    height: 40vh;
+    background-color: #14213d;
+    border-radius: 1em;
+    text-align: center;
+}
+#projects{
+    background-color: #e5e5e5;
+    width: 40vw;
+    height: 40vh;
+    border-radius: 1em;
+    transform: translateX(6%) rotate(1deg);
+    z-index: 5;
+    text-align: center;
+}
+#resume{
+    background-color:#ffffff ;
+    width: 40vw;
+    height: 40vh;
+    border-radius: 1em;
+    z-index: 2;
+    transform: translateX(10%) rotate(6deg);
+    text-align: center;
+
+}
+.content{
+    overflow: hidden;
+}
+
+
+.titleName{
+    margin-top: 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 8vmin;
+    font-family: 'Cabin Sketch';
+    font-weight: 900;
+    font-style: bold;
+}
+
+/* Define the base styles for the button with the class "changePageButton" */
+.changePageButton {
+    background-color: transparent;
+    background: none;
+    border:none;
+    margin: 2vw;
+    color: #14213d;
+    text-decoration: none;
+    font-family: "Clarkson",Helvetica,sans-serif;
+    opacity: 0.8;
+    font-size: large;
+    font-weight: 900;
+    font-style: italic;
+    cursor: pointer;
+    padding: 2px;
+    position: relative;
+    overflow: hidden; /* Hide overflow for the animation effect */
+    transition: border-color 0.3s; /* Apply transition to border-color */
+  }
+  
+  /* Define the pseudo-element that creates the underline effect */
+  .changePageButton::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Start with zero width */
+    height: 2px;
+    background-color: white; /* Underline color */
+    transition: width 0.3s, background-color 0.3s; /* Apply transitions to width and background-color */
+  }
+  
+  /* Define the hover styles */
+  .changePageButton:hover::after {
+    width: 100%; /* Gradually expand the width to 100% on hover */
+    background-color: white; /* Change underline color on hover */
+  }
+  
+  .changePageButton:hover {
+    border-color: white; /* Change border color on hover */
+    color: white; /* Change text color to the underline color on hover */
+  }
+  
+  
+
+.fa-linkedin:hover{
+    color: white !important;
+    transition: .9s;
+    transform: rotateY(360deg);
+    
+
+.fa-github:hover{
+    transition: .9s;
+    transform: rotateY(360deg);
+    color: white !important;
+}
+.fa-github{
+    size:60% !important; 
+    filter: drop-shadow(2px 2px 2px grey);
+}
+.fa-linkedin{
+    size: 90% !important;
+    filter: drop-shadow(2px 2px 2px grey);
+}
+.socialNav, #socialNav{
+    position: absolute;  
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    
+    
+
+}
+
+
+
