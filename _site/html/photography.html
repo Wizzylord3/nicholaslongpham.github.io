@@ -1,24 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Photography Around The World</title>
+    <script src="https://kit.fontawesome.com/52e13d882d.js" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
     <style>
-        body{
-            background-color: #4A4E69;
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+            color: grey;
         }
+        #container{
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            background-color: #f7f7f7;
+
+        }
+        #header{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .fa-linkedin:hover{
+                color: gray !important;
+                transition: .9s;
+                transform: rotateY(360deg);
+        }  
+
+        .fa-github:hover{
+            transition: .9s;
+            transform: rotateY(360deg);
+            color: gray !important;
+        }
+        .fa-github{
+            font-size:120% !important; 
+
+        }
+        .fa-linkedin{
+            font-size: 120% !important;
+            
+        }
+        #socialNav{
+            left:0;
+            
+        }
+        
         h1{
             font-family: "Clarkson",Helvetica,sans-serif;
-            font-style: italic;
             text-align: center;
+            opacity: 0.8;
+            margin-top: 1em;
+            padding-top: 2em;
+        }
+        #navBar {
+            height: 60px;
+            width: 100%;
+            position: absolute;
+            top:0;
+        }
+        #navBar ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        #navBar ul li {
+            margin: 0 20px;
+            display: grid;
+            place-items: center;
+            color: grey;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+            font-size: small;
+            font-weight: bold;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        /* Define the styles for the anchor tags with the .navButton class */
+        .navButton {
+            color: black; /* Default text color */
+            text-decoration: none;
+            font-size: small;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            position: relative; /* Add relative positioning for the ::after pseudo-element */
+        }
+
+        /* Define the styles for the underline effect using ::after pseudo-element */
+        .navButton::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0; /* Start with zero width */
+            height: 2px;
+            background-color: grey; /* Underline color */
+            transition: width 0.3s, background-color 0.3s; /* Apply transitions to width and background-color */
+        }
+
+        /* Define the hover styles */
+        .navButton:hover::after {
+            width: 100%; /* Gradually expand the width to 100% on hover */
+            background-color: grey; /* Change underline color on hover */
+        }
+
+        .navButton:hover {
+            color: grey; /* Change text color to the underline color on hover */
+            /* ... Other hover styles ... */
+        }
+        #photo-container{
+                width:40%;
+        }
+        #coverPic{
+            width: 40vw;
+            border-radius: 1em;
+            margin-top: 5em;
+            margin-left: 1em;
+        }
+        #aSide {
+            height: 400px;
+            width: 400px;
+            position: absolute;
+            padding-top: 5em;
+            padding-right: 5em;
+            top: calc(50% - 250px);
+            right: 7%;
+        }
+
+        /* This styles the 3D object inserted in the aside container */
+        #aSide model-viewer {
+            z-index: 1;
+            height: 400px;
+            width: 400px;
+            position: absolute;
+            border: none;
+            overflow: visible;
+            background-color: transparent;
+
         }
 
     </style>
 </head>
 <body>
-    <h1>PHOTOGRAPHY</h1>
+    <div id="container">
+        <div id="navBar">
+            <ul id="socialNav" style="list-style-type: none;">
+                <li class="social">
+                    <a class="linkedin" href="https://www.linkedin.com/in/nicholas-pham-a56b34243/">
+                        <span class="fa-brands fa-linkedin" style="color: #000000;"></span>
 
+                    </a>
+                </li>
+                <li>
+                    <a class="github" href="https://github.com/Wizzylord3">
+                        <i class="fa-brands fa-github" style="color: #000000;"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <ul>
+                <li class="active">
+                    <a class="navButton" href="#">HOME</a>
+                </li>
+                <li>
+                    <a class="navButton" href="#">ABOUT</a>
+                </li>
+                <li>
+                    <a class="navButton" href="#">PROJECTS</a>
+                </li>
+                <li>
+                    <a class="navButton" href="#">RESUME</a>
+                </li>
+                <li>
+                    <a class="navButton" href="#">PHOTOGRAPHY</a>
+                </li>
+            </ul>
+        </div>
+        <div id="header">
+            <h1>PHOTOGRAPHY AROUND THE WORLD</h1>
+        </div>
+
+        <div id="photo-card">
+            <img id="coverPic" src="../photographer.JPG">
+        </div>
+
+        <!--3D Model of Earth-->
+        <div id="aSide">
+            <model-viewer src="../assets/Earth.glb" alt="3D model of Earth" auto-rotate camera-controls ar ios-src="../assets/Earth.glb"></model-viewer>
+        </div>
+    </div>
 </body>
 </html>

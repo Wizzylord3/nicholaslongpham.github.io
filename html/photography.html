@@ -3,10 +3,13 @@
 <head>
 
     <meta charset="UTF-8">
+    <meta name="description" content="Nicholas Pham's Photography Around The World">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photography Around The World</title>
     <script src="https://kit.fontawesome.com/52e13d882d.js" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
     <style>
         * {
             padding: 0;
@@ -41,11 +44,11 @@
         }
         .fa-github{
             font-size:120% !important; 
-            filter: drop-shadow(2px 2px 2px grey);
+
         }
         .fa-linkedin{
             font-size: 120% !important;
-            filter: drop-shadow(2px 2px 2px grey);
+            
         }
         #socialNav{
             left:0;
@@ -88,7 +91,7 @@
         }
         /* Define the styles for the anchor tags with the .navButton class */
         .navButton {
-            color: grey; /* Default text color */
+            color: black; /* Default text color */
             text-decoration: none;
             font-size: small;
             font-weight: bold;
@@ -118,8 +121,8 @@
             color: grey; /* Change text color to the underline color on hover */
             /* ... Other hover styles ... */
         }
-        #photo-container{
-                width:40%;
+        #photo-card{
+                width:50vw;
         }
         #coverPic{
             width: 40vw;
@@ -127,7 +130,27 @@
             margin-top: 5em;
             margin-left: 1em;
         }
+        #aSide {
+            height: 400px;
+            width: 400px;
+            position: absolute;
+            padding-top: 4em;
+            padding-right: 5em;
+            top: calc(50% - 250px);
+            right: 7%;
+        }
 
+        /* This styles the 3D object inserted in the aside container */
+        #aSide model-viewer {
+            z-index: 1;
+            height: 400px;
+            width: 400px;
+            position: absolute;
+            border: none;
+            overflow: visible;
+            background-color: transparent;
+
+        }
 
     </style>
 </head>
@@ -171,12 +194,12 @@
         </div>
 
         <div id="photo-card">
-            <img id="coverPic" src="../photographer.JPG">
+            <img alt="picture of the author" id="coverPic" src="../photographer.webp">
         </div>
 
         <!--3D Model of Earth-->
         <div id="aSide">
-
+            <model-viewer src="../assets/Earth.glb" alt="3D model of Earth" auto-rotate camera-controls ar ios-src="../assets/Earth.glb"></model-viewer>
         </div>
     </div>
 </body>
