@@ -54,6 +54,14 @@
             left:0;
             
         }
+        @media (max-width: 625px) {
+            #socialNav {
+                position: relative; /* Change to relative positioning to place it in the document flow */
+                bottom: auto; /* Remove bottom positioning */
+                width: auto; /* Remove full-width */
+                text-align: left; /* Align its contents to the left */
+            }
+        }
         
         h1{
             font-family: "Clarkson",Helvetica,sans-serif;
@@ -66,7 +74,7 @@
             height: 60px;
             width: 100%;
             position: absolute;
-            top:0;
+            top:1em;
         }
         #navBar ul {
             list-style: none;
@@ -121,35 +129,45 @@
             color: grey; /* Change text color to the underline color on hover */
             /* ... Other hover styles ... */
         }
+        #content{
+            display: flex;
+            width: 100%;
+            margin-top: 5vh;
+            align-items: stretch;
+        }
         #photo-card{
-                width:50vw;
+            justify-content: center;
+            flex: 1;
+            max-width:40vw;
+            height: auto;
+            position: relative;
+            margin-right: 1em;
+            display: flex;
+            align-items: center;
         }
         #coverPic{
-            width: 40vw;
+            max-height: 100%;
+            overflow: auto;
+            width: 100%;
             border-radius: 1em;
-            margin-top: 5em;
             margin-left: 1em;
         }
         #aSide {
-            height: 400px;
-            width: 400px;
-            position: absolute;
-            padding-top: 4em;
-            padding-right: 5em;
-            top: calc(50% - 250px);
-            right: 7%;
+            flex:1;
+            height: auto;
+            min-height: 40vh;
+            max-width: 40vw;
+            position:relative;
+            margin-left:10vw;
+            right: 5vw;
         }
 
         /* This styles the 3D object inserted in the aside container */
         #aSide model-viewer {
-            z-index: 1;
-            height: 400px;
-            width: 400px;
-            position: absolute;
+            height: 100%;
+            min-height: 40vh;
+            width: 100%;
             border: none;
-            overflow: visible;
-            background-color: transparent;
-
         }
 
     </style>
@@ -192,15 +210,30 @@
         <div id="header">
             <h1>PHOTOGRAPHY AROUND THE WORLD</h1>
         </div>
+        <div id="content">
+            <div id="photo-card">
+                <img alt="picture of the author" id="coverPic" src="../photographer.webp">
+            </div>
 
-        <div id="photo-card">
-            <img alt="picture of the author" id="coverPic" src="../photographer.webp">
-        </div>
+            <!--3D Model of Earth-->
+            <div id="aSide">
+                <model-viewer src="../assets/Earth.glb" alt="3D model of Earth" auto-rotate camera-controls  ios-src="../assets/Earth.glb"></model-viewer>
+            </div>
+            <div id="photo-feed">
 
-        <!--3D Model of Earth-->
-        <div id="aSide">
-            <model-viewer src="../assets/Earth.glb" alt="3D model of Earth" auto-rotate camera-controls ar ios-src="../assets/Earth.glb"></model-viewer>
+            </div>
         </div>
     </div>
+    <script>
+        const cloudFrontPhotoAlbum = [
+            "https://d1k32j87wlsage.cloudfront.net/Nick's_Photos/Mexico/",
+            "https://d1k32j87wlsage.cloudfront.net/Nick's_Photos/San Diego/",
+            "https://d1k32j87wlsage.cloudfront.net/Nick's_Photos/San Fransisco/"
+        ];
+
+        const photoFeed = document.getElementById('photo-feed');
+
+
+    </script>
 </body>
 </html>
